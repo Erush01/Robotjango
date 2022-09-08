@@ -1,0 +1,40 @@
+
+<style>
+
+    .hr_comp{
+        border: 2px solid darkblue;
+        border-radius: 5px;
+      }
+
+    .announce{
+        border:2px solid black;
+        
+    }
+    </style>
+
+
+<h1>Announcements</h1>
+
+<a href="{% url 'create-announcement'%}"> Create Announcement</a>
+
+<div>
+{% for announce in announcements %}
+    <div class="announce">
+        <a href="{% url 'update-announce' announce.id %}">Update</a>
+        <a href="{% url 'delete-announce' announce.id %} "> Delete</a>
+        <h3>{{announce.title}}</h3>
+        <p>{{announce.body}}</p>
+        <p>{{announce.host}}</p>
+        <p>{{announce.host_title}}</p>
+        <small>{{announce.created|timesince}}</small>
+        
+        
+    </div>
+<hr class="hr_comp">
+</div>
+
+{%  endfor %}
+
+
+
+

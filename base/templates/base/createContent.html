@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+<form class="form" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div>
+    {% for field in form %}
+    <div>
+        
+        <label for="form_name"><h4>{{field.label}}:</h4></label>
+        {{field}}
+
+    </div>
+    {% endfor %}
+</div>
+<a href="{{request.META.HTTP_REFERER}}">Go Back</a>
+<input type="submit" value="Submit"/>
+
+</form>
+{% endblock content %}

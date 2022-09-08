@@ -1,0 +1,15 @@
+<h1>Commissions</h1>
+<a href="{% url 'create-commission'%}"> Create Commission</a>
+{% for commission in commissions %}
+    <div>
+        <a href="{% url 'update-commission' commission.id %}">Update</a>
+        <a href="{% url 'delete-commission' commission.id %} "> Delete</a>
+        <h3>{{commission.name}}</h3>
+        <p>{{commission.chair}}</p>
+        <p>{{commission.description}}</p>
+        <hr class="hr_comp">
+        
+    </div>
+    
+
+{%  endfor %}

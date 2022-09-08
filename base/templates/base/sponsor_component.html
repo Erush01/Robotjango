@@ -1,0 +1,12 @@
+<h1>Sponsors</h1>
+<a href="{% url 'create-sponsor'%}"> Create Sponsor</a>
+{% for sponsor in sponsors %}
+    <div>
+        <a href="{% url 'update-sponsor' sponsor.id %}">Update</a>
+        <a href="{% url 'delete-sponsor' sponsor.id %} "> Delete</a>
+        <h3>{{sponsor.name}}</h3>
+        <p>{{sponsor.image}}</p>
+        <hr class="hr_comp">
+    </div>
+
+{%  endfor %}

@@ -1,0 +1,19 @@
+{% load static %}
+<style>
+
+    .hr_navbar{
+        border: 5px solid black;
+        border-radius: 5px;
+      }
+    </style>
+
+    <a href="{% url 'home' %}"><h1>Robotjango</h1></a>
+
+    {%  if request.user.is_authenticated %}
+        <p>welcome {{request.user}}</p>
+        <a href="{% url 'logout'%}">Logout</a>
+    {% else %}
+        <a href="{% url 'login-page' %}">Login</a>
+
+    {%endif%}
+    <hr class="hr_navbar">

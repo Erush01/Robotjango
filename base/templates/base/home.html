@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<style>
+
+.hr{
+    border: 5px solid green;
+    border-radius: 5px;
+  }
+</style>
+
+
+<!-- Announcements -->
+{% include 'base/announcement_component.html' %}
+<hr class=hr>
+<!-- Lessons -->
+{% include 'base/lesson_component.html' %}
+<hr class=hr>
+<!-- Commissions -->
+{% include 'base/commission_component.html' %}
+<hr class=hr>
+<!-- News -->
+{% include 'base/news_component.html' %}
+<hr class=hr>
+<!-- Sponsor -->
+{% include 'base/sponsor_component.html' %}
+<hr class=hr>
+
+
+{% endblock content %}

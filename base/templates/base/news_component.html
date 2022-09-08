@@ -1,0 +1,15 @@
+<h1>News</h1>
+<a href="{% url 'create-news'%}"> Create News</a>
+{% for new in news %}
+    <div>
+        <a href="{% url 'update-news' new.id %}">Update</a>
+        <a href="{% url 'delete-news' new.id %} "> Delete</a>
+        <h3>{{new.title}}</h3>
+        <p>{{new.host}}</p>
+        <p>{{new.body}}</p>
+        <p>{{new.image}}</p>
+        <hr class="hr_comp">
+        
+    </div>
+
+{%  endfor %}

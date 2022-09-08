@@ -1,0 +1,16 @@
+<h1>Lessons</h2>
+<a href="{% url 'create-lesson'%}"> Create lesson</a>
+{% for lesson in lessons %}
+    <div>
+        <a href="{% url 'update-lesson' lesson.id %} "> Update</a>
+        <a href="{% url 'delete-lesson' lesson.id %} "> Delete</a>
+        <h3>{{lesson.name}}</h3>
+        <p>{{lesson.tutor}}</p>
+        <p><img src="{{lesson.image.url}}" /></p>
+        <p>{{lesson.description}}</p>
+        <hr class="hr_comp">
+        
+    </div>
+
+{%  endfor %}
+
